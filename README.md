@@ -61,7 +61,7 @@ Pour push et pull se réferer à la vidéo.
 
 - Ouvrez votre terminal
 - **cd economic_research** -> dirigez vous vers le fichier du projet
-- **git pull economic_research main** -> actualisez les modifications qui ont étés faites en votre absence
+- **git pull origin main** -> actualisez les modifications qui ont étés faites en votre absence
 - **source venv/bin/activate** -> activez votre environement virtuel
 - **code .** -> ouvrir vscode
 
