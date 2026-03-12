@@ -1,14 +1,12 @@
 ### ============ Name of the repo : economic_research ============ ###
 Problématique : Comment l’efficacité des chocs de politique monétaire en Suisse a-t-elle évoluée entre le régime pré-plancher (1990–2011), le régime du plancher de change (2011–2015) et l’ère des taux négatifs (2015–2022) ?
 
-### Participants :
-Dorian 
+## Participants 👥
 
-Ryan 
-
-Veljko 
-
-Timéo 
+- 🧑‍💻 **Dorian**  
+- 🧑‍💻 **Ryan**  
+- 🧑‍💻 **Veljko**  
+- 🧑‍💻 **Timéo**
 
 ### Lien vers le google doc du projet :
 https://docs.google.com/document/d/14NkQ9kOfRvtMvt0urUogPzFW_W_OlQbyQNy4H52IoLU/edit?tab=t.0
