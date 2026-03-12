@@ -54,6 +54,8 @@ Git est un répertoire de versions de notre code. Il stock chacune de nos upgrad
 Uniquement deux fonctionnalités seront utilisés dans notre structure:
   - **push** : c'est l'action qui vous permettra de pousser votre code sur github, il actualisera ce que vous avez fais sur le cloud.
   - **pull** : Vous tirez les dernières modifications qui ont étés réalisés par les membres. Elles seront donc actualisés sur votre clone local du github ( le fichier quoi ).
+
+Pour push et pull se réferer à la vidéo.
  
 ### Routine d'initialisation : 
 
