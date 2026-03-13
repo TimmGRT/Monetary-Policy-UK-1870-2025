@@ -46,6 +46,13 @@ __Cook list__ :
  
 Génial, le clone du Repo Git est bien intialisé vous pouvez coder ! 
 
+### ATTENTION : lorsque vous ouvrez le code ou vscode, activez l'autosave. 
+
+Pour ce faire : en haut à gauche de l'écran lorsque VSCODE est ouvert cliquez sur ***file*** - > descendez et vous trouverez **autosave**
+
+<img width="1467" height="956" alt="Capture d’écran 2026-03-13 à 13 26 38" src="https://github.com/user-attachments/assets/757d9791-3549-404d-a7ec-834fbc091e22" />
+
+
 ### Quelques explications liés à Git et son fonctionnement 
 
 Git est un répertoire de versions de notre code. Il stock chacune de nos upgrades dans un cloud, mais forcément un grand pouvoir implique de grandes résponsabilités... Certaines règles sont à respecter : 
