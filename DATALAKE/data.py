@@ -1,0 +1,31 @@
+# INDICATIONS PAR RAPPORT AUX DONNES 
+# Au sein de ce fichier les données seront stockés et compressés en parquet (une méthode plus légere et plus rapide que des CSV).
+# Je m'occuperai de les compressés quand on les aura, c'est très facile vous verrez
+# Maintenant pour telecharger des données du datalake dans vos zone de code attribués, vous executerez le code suivant :
+
+# import pandas as pd
+# path_parquet_file = 'le chemin exact du parquet que vous voulez, vous devez faire un clique droit sur le parquet désiré et > "Copy Path" '
+# df = pd.read_parquet(path_parquet_file)
+
+### Scripts telechargement des datas 
+from global_macro_data import gmd
+from IPython.display import display
+import os
+from pathlib import Path
+
+def data_download_gmd(country, variables):
+    try :
+        df = gmd(version="2025_01", country=country, variables=variables)
+        return df
+
+    except Exception as e:
+        print("WARNING, CHECK BACK THE PARAMETERS : {e}")
+
+
+def data_storing(data):
+    current_file = Path(__file__).resolve()
+    return(current_file)
+
+    
+    
+    
