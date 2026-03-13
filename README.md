@@ -60,6 +60,13 @@ Git est un répertoire de versions de notre code. Il stock chacune de nos upgrad
 - Codez toujours sur votre fichier assigné ! Un datalake est commun à tout le monde, vous pouvez l'importer dans votre script mais ne modifiez pas de fichiers non contenus dans votre fichier personel !! Ce fonctionnement nous évitera de devoir fonctionner avec les branch, pull request et merge, plus lourds à comprendre. 
 - Lorsque des modifications significatives sont faites sur votre fichier, allez dans l'onglet sur la gauche de Vscode représentant le logo de git et faites un push de vos modifications. C'est ici que vous y trouverez votre bonheur.
 
+### Procédure pour push : 
+  - premierement lorsque vous faites plusieurs changements mineur cliquez sur le bouton staged qui permettra de stacker tout vos changements mineurs
+  - ensuite quand la quantités de changements mineur devient conséquente, __ENTREZ UN MESSAGE DE COMMIT AU DESSUS DU BOUTON BLEU__, et appuyez sur **commit changes**, ce qui pushera le code sur votre git LOCAL.
+  - Lorsque vous voulez actualiser le code contenu dans github (le cloud), cliquez sur le bouton **sync changes**
+ <img width="1661" height="1240" alt="image" src="https://github.com/user-attachments/assets/96ae6f63-0faf-42f9-9a6a-b8401dd9b156" />
+
+
 Uniquement deux fonctionnalités seront utilisés dans notre structure:
   - **push** : c'est l'action qui vous permettra de pousser votre code sur github, il actualisera ce que vous avez fais sur le cloud.
   - **pull** : Vous tirez les dernières modifications qui ont étés réalisés par les membres. Elles seront donc actualisés sur votre clone local du github ( le fichier quoi ).
