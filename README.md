@@ -11,12 +11,12 @@ Problématique : Comment l’efficacité des chocs de politique monétaire en Su
 ### Lien vers le google doc du projet :
 https://docs.google.com/document/d/14NkQ9kOfRvtMvt0urUogPzFW_W_OlQbyQNy4H52IoLU/edit?tab=t.0
 
-### Téléchargement de git en local 
+### 1. Téléchargement de git en local 
 dans le terminal : **xcode-select --install**
 
 Ce qui va faire apparaitre un pop up pour download les dépendances dont git, que vous accepterez.
 
-### Première intitialisation de VScode ( Pas lié directement à GIT )
+### 2. Première intitialisation de VScode ( Pas lié directement à GIT )
 
 - Téléchargez VsCode : https://code.visualstudio.com/download
 - Ouvrez VsCode des applications et installez le raccourceis "code .", pour se faire :
@@ -24,7 +24,7 @@ Ce qui va faire apparaitre un pop up pour download les dépendances dont git, qu
   - tapez dans ce menu : **Shell command : Install 'code' command in PATH**
   - Voila ! maintenant quand vous écrivez dans un fichier de votre terminal **code .**, le fichier s'ouvre dans vscode.
 
-### Clonage du repo : 
+### 3. Clonage du repo : 
 Dans votre terminal entrez "ls" afin de visualiser tous les fichiers locaux de votre ordinateur. 
 
 Clonez au même endroit le repository ( projet ) github en éxecutant : **git clone https://github.com/TimmGRT/economic_research**. L'URL ici mentionné est l'url de la barre de recherche 
@@ -33,7 +33,7 @@ Ceci clonera le projet sous le nom "economic_research" au sein de votre dossier 
 
 lorsque vous allez sur le repository du projet sur github. 
 
-### Création du venv : 
+### 4. Création du venv : 
 Nous utiliserons un environement virtuel afin que le code puisse s'éxecuter sans problème de la même façon sur notre 4 ordinateurs. Si cela n'était pas le cas, certains modules et applications que j'ai installé personnellement en local qui me permette de faire tourner certains programmes ne seront pas disponibles pour un de vous... Ce qui fera que certains bout de code éxécutable chez moi grâce à mes dépendances ne le sera pas chez vous ( ou inversement ). 
 
 __Cook list__ : 
@@ -46,21 +46,21 @@ __Cook list__ :
  
 Génial, le clone du Repo Git est bien intialisé vous pouvez coder ! 
 
-### ATTENTION : lorsque vous ouvrez le code ou vscode, activez l'autosave. 
+### 5. ATTENTION :activez l'autosave des fichiers sans quoi vous devrez faire cmd + s tout le temps
 
 Pour ce faire : en haut à gauche de l'écran lorsque VSCODE est ouvert cliquez sur ***file*** - > descendez et vous trouverez **autosave**
 
 <img width="1467" height="956" alt="Capture d’écran 2026-03-13 à 13 26 38" src="https://github.com/user-attachments/assets/757d9791-3549-404d-a7ec-834fbc091e22" />
 
 
-### Quelques explications liés à Git et son fonctionnement 
+### 6. Quelques explications liés à Git et son fonctionnement 
 
 Git est un répertoire de versions de notre code. Il stock chacune de nos upgrades dans un cloud, mais forcément un grand pouvoir implique de grandes résponsabilités... Certaines règles sont à respecter : 
 
 - Codez toujours sur votre fichier assigné ! Un datalake est commun à tout le monde, vous pouvez l'importer dans votre script mais ne modifiez pas de fichiers non contenus dans votre fichier personel !! Ce fonctionnement nous évitera de devoir fonctionner avec les branch, pull request et merge, plus lourds à comprendre. 
 - Lorsque des modifications significatives sont faites sur votre fichier, allez dans l'onglet sur la gauche de Vscode représentant le logo de git et faites un push de vos modifications. C'est ici que vous y trouverez votre bonheur.
 
-### Procédure pour push : 
+### 7. Procédure pour push : 
   - premierement lorsque vous faites plusieurs changements mineur cliquez sur le bouton staged qui permettra de stacker tout vos changements mineurs
   - ensuite quand la quantités de changements mineur devient conséquente, __ENTREZ UN MESSAGE DE COMMIT AU DESSUS DU BOUTON BLEU__, et appuyez sur **commit changes**, ce qui pushera le code sur votre git LOCAL.
   - Lorsque vous voulez actualiser le code contenu dans github (le cloud), cliquez sur le bouton **sync changes**
@@ -73,7 +73,7 @@ Uniquement deux fonctionnalités seront utilisés dans notre structure:
 
 Pour push et pull se réferer à la vidéo.
  
-### Routine d'initialisation : 
+### 8. Routine d'initialisation : 
 
 - Ouvrez votre terminal
 - **cd economic_research** -> dirigez vous vers le fichier du projet
