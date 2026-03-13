@@ -9,3 +9,4 @@ path_parquet_file = 'le chemin exact du parquet que vous voulez, vous devez fair
 df = pd.read_parquet(path_parquet_file)
 
 ##lsdiyjfhasdlh dorian 
+# modificationstimeo 
