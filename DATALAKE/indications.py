@@ -7,3 +7,5 @@
 import pandas as pd
 path_parquet_file = 'le chemin exact du parquet que vous voulez, vous devez faire un clique droit sur le parquet désiré et > "Copy Path" '
 df = pd.read_parquet(path_parquet_file)
+
+##lsdiyjfhasdlh dorian 
