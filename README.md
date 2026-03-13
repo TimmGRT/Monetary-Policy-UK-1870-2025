@@ -27,7 +27,9 @@ Ce qui va faire apparaitre un pop up pour download les dépendances dont git, qu
 ### Clonage du repo : 
 Dans votre terminal entrez "ls" afin de visualiser tous les fichiers locaux de votre ordinateur. 
 
-Clonez au même endroit le repository ( projet ) github en éxecutant : **git clone "https://github.com/TimmGRT/economic_research"**. L'URL ici mentionné est l'url de la barre de recherche 
+Clonez au même endroit le repository ( projet ) github en éxecutant : **git clone https://github.com/TimmGRT/economic_research**. L'URL ici mentionné est l'url de la barre de recherche 
+
+Ceci clonera le projet sous le nom "economic_research" au sein de votre dossier main local.
 
 lorsque vous allez sur le repository du projet sur github. 
 
