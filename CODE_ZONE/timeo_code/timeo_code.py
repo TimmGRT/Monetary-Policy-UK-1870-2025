@@ -1,3 +1,2 @@
-from DATALAKE.data import data_storing
+from DATALAKE.data import *
 
-print(data_storing("data"))
