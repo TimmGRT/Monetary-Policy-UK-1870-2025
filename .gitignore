@@ -8,6 +8,8 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+*.egg-info/
+datalake.egg-info/
 
 # macOS
 .DS_Store

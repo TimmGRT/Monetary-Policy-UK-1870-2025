@@ -23,7 +23,9 @@ def data_download_gmd(country, variables):
 
 
 def data_storing(data):
+    data = "coucou"
     current_file = Path(__file__).resolve()
+    print(data)
     return(current_file)
 
     
