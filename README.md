@@ -13,8 +13,8 @@ Problématique : Comment l’efficacité des chocs de politique monétaire en Su
 - 🧑‍💻 **Veljko**  
 - 🧑‍💻 **Timéo**
 
-### Lien vers le google doc du projet :
-https://docs.google.com/document/d/14NkQ9kOfRvtMvt0urUogPzFW_W_OlQbyQNy4H52IoLU/edit?tab=t.0
+### Lien vers le journal de bord du projet :
+[https://docs.google.com/document/d/14NkQ9kOfRvtMvt0urUogPzFW_W_OlQbyQNy4H52IoLU/edit?tab=t.0](https://docs.google.com/document/d/1ArN4QLH1IzCfRL3MGWTbQbo_JbPDv8UI/edit)
 
 ### 1. Téléchargement de git en local 
 dans le terminal : **xcode-select --install**
