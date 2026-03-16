@@ -47,8 +47,8 @@ def data_storing(data, nom_fichier : str):
     DATALAKE_PATH = CURRENT_FILE_PATH.parent
 
     # Verif pour le nom du fichier
-    if nom_fichier in which_parquet():
-        raise(FileExistsError("a file with this name already exist in the DATALAKE"))
+    # if nom_fichier in which_parquet():
+    #     raise(FileExistsError("a file with this name already exist in the DATALAKE"))
     
     # telechargement du df en parquet vers datalake_path
     try :
