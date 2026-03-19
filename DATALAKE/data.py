@@ -46,27 +46,28 @@ def data_storing(data, nom_fichier : str):
     CURRENT_FILE_PATH = Path(__file__).resolve()
     DATALAKE_PATH = CURRENT_FILE_PATH.parent
 
-    # Verif pour le nom du fichier
-    # if nom_fichier in which_parquet():
-    #     raise(FileExistsError("a file with this name already exist in the DATALAKE"))
-    
     # telechargement du df en parquet vers datalake_path
+    file_name = nom_fichier + '.parquet'
+
+    PARQUET_FILE_PATH = DATALAKE_PATH/"PARQUET_FOLDER"/file_name
+
     try :
         if not isinstance(data, pd.DataFrame):
             df = pd.DataFrame(data)
         else:
             df = data
 
-        file_name = nom_fichier + '.parquet'
-
-        PARQUET_FILE_PATH = DATALAKE_PATH/"PARQUET_FOLDER"/file_name
-
+        if nom_fichier in which_parquet():
+            a = input(f"are you sure you want to erase and replace the file {nom_fichier} : 'yes' or 'no'")
+            if a == 'yes':
+                PARQUET_FILE_PATH.unlink()
+                data_storing(data, nom_fichier)
+            
         df.to_parquet(PARQUET_FILE_PATH, engine='pyarrow', compression='snappy')
 
     except Exception as e:
         print(f"Warning to the file that you entered... Should be a dataframe : {e}")
     return
-
 
 ## FONCTION POUR DOWNLOAD DES DONNÉES PARQUERT DANS VOTRE ZONE DE CODE 
 
