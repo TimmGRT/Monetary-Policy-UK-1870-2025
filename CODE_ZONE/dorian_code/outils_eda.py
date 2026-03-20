@@ -44,7 +44,7 @@ def corr_matrix(df):
     try:
         corr = df.corr(numeric_only=True) 
         
-        plt.figure(figsize=(12, 10))
+        plt.figure(figsize=(100, 300))
         sns.heatmap(corr, 
                     annot=True,
                     fmt=".2f",
