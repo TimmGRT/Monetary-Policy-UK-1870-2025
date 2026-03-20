@@ -1,6 +1,6 @@
 import numpy as np 
 import pandas as pd
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt 
 
 
 ### créé un histogramme pour le dataframe "df" et la colonne que vous souhaitez, attention, fonctionne seulement si vous utilisez le df qui vient de "main_cleaned.parquet" car la fonction récupère "year"
@@ -11,6 +11,7 @@ def histogram(df, column: str):
         plt.xlabel("Valeur")
         plt.ylabel("Nombre d'occurences")
         plt.show()
+        plt.close()
     except Exception as e: 
         print(f"Erreur : {e}")
 
@@ -22,8 +23,20 @@ def time_evo (df,column: str):
         plt.xlabel("Temps")
         plt.ylabel("Valeur")
         plt.show()
+        plt.close()
     except Exception as e: 
         print(f"Erreur : {e}")
+
+### créé un scatter plot pour les variables x et y du dataframe "df"
+def scat (df,x: str,y: str):
+    try:
+        plt.scatter(df[x],df[y])
+        plt.xlabel(x)
+        plt.ylabel(y)
+        plt.show()
+        plt.close()
+    except Exception as e:
+        print(f"Erreur: {e}")
     
 if __name__ == "__main__":
     print("Vous êtes bien dans le fichier outils_eda")
