@@ -57,11 +57,11 @@ def data_storing(data, nom_fichier : str):
         else:
             df = data
 
-        if nom_fichier in which_parquet():
-            a = input(f"are you sure you want to erase and replace the file {nom_fichier} : 'yes' or 'no'")
-            if a == 'yes':
-                PARQUET_FILE_PATH.unlink()
-                data_storing(data, nom_fichier)
+        # if nom_fichier in which_parquet():
+        #     a = input(f"are you sure you want to erase and replace the file {nom_fichier} : 'yes' or 'no'")
+        #     if a == 'yes':
+        #         PARQUET_FILE_PATH.unlink()
+        #         data_storing(data, nom_fichier)
             
         df.to_parquet(PARQUET_FILE_PATH, engine='pyarrow', compression='snappy')
 
