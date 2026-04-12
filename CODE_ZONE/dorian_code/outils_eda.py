@@ -105,9 +105,9 @@ def scat_period(df, x: str, y: str, xlabel: str = None, ylabel: str = None):
 def corr_matrix(df):
     # Mise à jour de la première période à 1864
     periodes = [
-        (1862, 1931, "Période 1862-1931"),
-        (1944, 1971, "Période 1944-1971"),
-        (1972, 2025, "Période 1972-2025")
+        (1871, 1914, "1871-1914"),
+        (1945, 1971, "1944-1971"),
+        (1972, 2025, "1972-2025")
     ]
     
     for debut, fin, titre in periodes:
@@ -127,7 +127,7 @@ def corr_matrix(df):
                         center=0,
                         linewidths=.5)
             
-            plt.title(f"Matrice de Corrélation : {titre}")
+            plt.title(f"Correlation matrix : {titre}")
             plt.show()
             plt.close()
             
@@ -149,10 +149,10 @@ def plot_future_impact_heatmap(df, cause_col, effect_col, max_leads=5):
     heatmap_data = corr_matrix[[cause_col]].drop(index=cause_col).T
     
     plt.figure(figsize=(15, 3))
-    sns.heatmap(heatmap_data, annot=True, cmap='coolwarm', center=0, fmt=".2f")
+    sns.heatmap(heatmap_data, annot=True, cmap='coolwarm', center=0, fmt=".2f", cbar=False)
     
-    plt.title(f"Impact de : {cause_col} (Aujourd'hui) sur le FUTUR de {effect_col}")
-    plt.xlabel("Horizon temporel (Années dans le futur)")
+    plt.title(f"Impact of today's {cause_col} on {effect_col} future")
+    plt.xlabel("Time horizon")
     plt.show()
     plt.close()
 
@@ -175,9 +175,9 @@ def plot_rolling_corr(df, x_col, y_cols, window=20):
             ))
 
         fig.update_layout(
-            title=f"Impact des {x_col} sur l'Économie (Corrélations glissantes {window} ans)",
-            xaxis_title="Année",
-            yaxis_title="Coefficient de Corrélation",
+            title=f"Impact of {x_col} on the Economy ({window}-Year Rolling Correlations)",
+            xaxis_title="Year",
+            yaxis_title="Correlation coefficient",
             yaxis=dict(range=[-1.1, 1.1]),
             template="plotly_white",
             
