@@ -34,8 +34,8 @@ def time_evo(df, column: str):
             df, 
             x='year', 
             y=column,
-            title=f"Évolution de {column} au cours du temps",
-            labels={'year': "Année", column: "Valeur"},
+            title=f"{column} evolution in time",
+            labels={'year': "Year", column: "Value"},
             markers=True,         # Ajoute des points sur la ligne pour chaque donnée
             template="plotly_white"
         )
@@ -51,8 +51,10 @@ def time_evo(df, column: str):
     except Exception as e: 
         print(f"Erreur dans le graphique d'évolution : {e}")
 
-### créé un scatter plot pour les variables x et y du dataframe "df" pour chaque période distincte
-def scat_period(df, x: str, y: str):
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+def scat_period(df, x: str, y: str, xlabel: str = None, ylabel: str = None):
     try:
         def definir_periode(year):
             if 1862 <= year <= 1931:
@@ -66,7 +68,6 @@ def scat_period(df, x: str, y: str):
 
         df_plot = df.copy()
         df_plot['Periode'] = df_plot['year'].apply(definir_periode)
-
         df_plot = df_plot[df_plot['Periode'] != 'Hors période']
 
         plt.figure(figsize=(10, 7))
@@ -86,10 +87,12 @@ def scat_period(df, x: str, y: str):
         )
 
         plt.ticklabel_format(style='plain', axis='both')
-        plt.title(f"Analyse par périodes spécifiques : {x} vs {y}")
-        plt.xlabel(x)
-        plt.ylabel(y)
-        plt.legend(title="Périodes")
+        
+        # MODIFICATION : Utilise les labels personnalisés ou les noms de colonnes par défaut
+        plt.xlabel(xlabel if xlabel else x)
+        plt.ylabel(ylabel if ylabel else y)
+        
+        plt.legend(title="Periods")
         plt.grid(True, linestyle=':', alpha=0.6)
         
         plt.show()
@@ -237,6 +240,39 @@ def stationnarize(df, columns_to_diff, method = 'simple'):
             df_stat[f'{col}_stat'] = df_stat[col].diff()
             
     return df_stat
+
+def time_evo_clean(df, columns: list, save_path=None):
+    try:
+        if isinstance(columns, str):
+            columns = [columns]
+            
+        fig = px.line(
+            df, 
+            x='year', 
+            y=columns,
+            title=None, # Pas de titre
+            labels={'year': "Year", 'value': "Value"}, # Titres des axes
+            template="plotly_white"
+        )
+
+        fig.update_layout(
+            showlegend=False,        # MODIFICATION : Supprime la légende (description)
+            xaxis_tickformat='d', 
+            yaxis_tickformat='.2f',
+            margin=dict(t=10, b=10, l=10, r=10) # Réduit les marges blanches autour
+        )
+
+        # Désactive le petit graph de sélection en dessous
+        fig.update_xaxes(rangeslider_visible=False)
+
+        fig.show()
+
+        if save_path:
+            fig.write_image(save_path)
+            print(f"Graphique minimaliste sauvegardé : {save_path}")
+
+    except Exception as e: 
+        print(f"Erreur : {e}")
     
 if __name__ == "__main__":
     print("Vous êtes bien dans le fichier outils_eda")
