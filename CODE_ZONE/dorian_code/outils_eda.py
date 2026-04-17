@@ -34,8 +34,8 @@ def time_evo(df, column: str):
             df, 
             x='year', 
             y=column,
-            title=f"Évolution de {column} au cours du temps",
-            labels={'year': "Année", column: "Valeur"},
+            title=f"{column} evolution in time",
+            labels={'year': "Year", column: "Value"},
             markers=True,         # Ajoute des points sur la ligne pour chaque donnée
             template="plotly_white"
         )
@@ -51,8 +51,10 @@ def time_evo(df, column: str):
     except Exception as e: 
         print(f"Erreur dans le graphique d'évolution : {e}")
 
-### créé un scatter plot pour les variables x et y du dataframe "df" pour chaque période distincte
-def scat_period(df, x: str, y: str):
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+def scat_period(df, x: str, y: str, xlabel: str = None, ylabel: str = None):
     try:
         def definir_periode(year):
             if 1862 <= year <= 1931:
@@ -66,7 +68,6 @@ def scat_period(df, x: str, y: str):
 
         df_plot = df.copy()
         df_plot['Periode'] = df_plot['year'].apply(definir_periode)
-
         df_plot = df_plot[df_plot['Periode'] != 'Hors période']
 
         plt.figure(figsize=(10, 7))
@@ -86,10 +87,12 @@ def scat_period(df, x: str, y: str):
         )
 
         plt.ticklabel_format(style='plain', axis='both')
-        plt.title(f"Analyse par périodes spécifiques : {x} vs {y}")
-        plt.xlabel(x)
-        plt.ylabel(y)
-        plt.legend(title="Périodes")
+        
+        # MODIFICATION : Utilise les labels personnalisés ou les noms de colonnes par défaut
+        plt.xlabel(xlabel if xlabel else x)
+        plt.ylabel(ylabel if ylabel else y)
+        
+        plt.legend(title="Periods")
         plt.grid(True, linestyle=':', alpha=0.6)
         
         plt.show()
@@ -102,9 +105,9 @@ def scat_period(df, x: str, y: str):
 def corr_matrix(df):
     # Mise à jour de la première période à 1864
     periodes = [
-        (1862, 1931, "Période 1862-1931"),
-        (1944, 1971, "Période 1944-1971"),
-        (1972, 2025, "Période 1972-2025")
+        (1871, 1914, "1871-1914"),
+        (1945, 1971, "1944-1971"),
+        (1972, 2025, "1972-2025")
     ]
     
     for debut, fin, titre in periodes:
@@ -124,7 +127,7 @@ def corr_matrix(df):
                         center=0,
                         linewidths=.5)
             
-            plt.title(f"Matrice de Corrélation : {titre}")
+            plt.title(f"Correlation matrix : {titre}")
             plt.show()
             plt.close()
             
@@ -146,10 +149,10 @@ def plot_future_impact_heatmap(df, cause_col, effect_col, max_leads=5):
     heatmap_data = corr_matrix[[cause_col]].drop(index=cause_col).T
     
     plt.figure(figsize=(15, 3))
-    sns.heatmap(heatmap_data, annot=True, cmap='coolwarm', center=0, fmt=".2f")
+    sns.heatmap(heatmap_data, annot=True, cmap='coolwarm', center=0, fmt=".2f", cbar=False)
     
-    plt.title(f"Impact de : {cause_col} (Aujourd'hui) sur le FUTUR de {effect_col}")
-    plt.xlabel("Horizon temporel (Années dans le futur)")
+    plt.title(f"Impact of today's {cause_col} on {effect_col} future")
+    plt.xlabel("Time horizon")
     plt.show()
     plt.close()
 
@@ -172,9 +175,9 @@ def plot_rolling_corr(df, x_col, y_cols, window=20):
             ))
 
         fig.update_layout(
-            title=f"Impact des {x_col} sur l'Économie (Corrélations glissantes {window} ans)",
-            xaxis_title="Année",
-            yaxis_title="Coefficient de Corrélation",
+            title=f"Impact of {x_col} on the Economy ({window}-Year Rolling Correlations)",
+            xaxis_title="Year",
+            yaxis_title="Correlation coefficient",
             yaxis=dict(range=[-1.1, 1.1]),
             template="plotly_white",
             
@@ -237,6 +240,39 @@ def stationnarize(df, columns_to_diff, method = 'simple'):
             df_stat[f'{col}_stat'] = df_stat[col].diff()
             
     return df_stat
+
+def time_evo_clean(df, columns: list, save_path=None):
+    try:
+        if isinstance(columns, str):
+            columns = [columns]
+            
+        fig = px.line(
+            df, 
+            x='year', 
+            y=columns,
+            title=None, # Pas de titre
+            labels={'year': "Year", 'value': "Value"}, # Titres des axes
+            template="plotly_white"
+        )
+
+        fig.update_layout(
+            showlegend=False,        # MODIFICATION : Supprime la légende (description)
+            xaxis_tickformat='d', 
+            yaxis_tickformat='.2f',
+            margin=dict(t=10, b=10, l=10, r=10) # Réduit les marges blanches autour
+        )
+
+        # Désactive le petit graph de sélection en dessous
+        fig.update_xaxes(rangeslider_visible=False)
+
+        fig.show()
+
+        if save_path:
+            fig.write_image(save_path)
+            print(f"Graphique minimaliste sauvegardé : {save_path}")
+
+    except Exception as e: 
+        print(f"Erreur : {e}")
     
 if __name__ == "__main__":
     print("Vous êtes bien dans le fichier outils_eda")
