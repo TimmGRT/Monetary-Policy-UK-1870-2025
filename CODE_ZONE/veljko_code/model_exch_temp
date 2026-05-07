@@ -5,7 +5,7 @@
 \textbf{Model:}                 &         OLS         & \textbf{  Adj. R-squared:    } &     0.255   \\
 \textbf{Method:}                &    Least Squares    & \textbf{  F-statistic:       } &     102.3   \\
 \textbf{Date:}                  &   Thu, 07 May 2026  & \textbf{  Prob (F-statistic):} &  2.29e-48   \\
-\textbf{Time:}                  &       11:38:07      & \textbf{  Log-Likelihood:    } &   -40.045   \\
+\textbf{Time:}                  &       11:39:15      & \textbf{  Log-Likelihood:    } &   -40.045   \\
 \textbf{No. Observations:}      &           105       & \textbf{  AIC:               } &     108.1   \\
 \textbf{Df Residuals:}          &            91       & \textbf{  BIC:               } &     145.2   \\
 \textbf{Df Model:}              &            13       & \textbf{                     } &             \\
