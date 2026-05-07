@@ -1,0 +1,45 @@
+\begin{center}
+\begin{tabular}{lclc}
+\toprule
+\textbf{Dep. Variable:}         &    cpi\_stat     & \textbf{  R-squared:         } &     0.359   \\
+\textbf{Model:}                 &       OLS        & \textbf{  Adj. R-squared:    } &     0.284   \\
+\textbf{Method:}                &  Least Squares   & \textbf{  F-statistic:       } &     5.835   \\
+\textbf{Date:}                  & Thu, 07 May 2026 & \textbf{  Prob (F-statistic):} &  4.07e-07   \\
+\textbf{Time:}                  &     10:35:07     & \textbf{  Log-Likelihood:    } &    223.08   \\
+\textbf{No. Observations:}      &         105      & \textbf{  AIC:               } &    -422.2   \\
+\textbf{Df Residuals:}          &          93      & \textbf{  BIC:               } &    -390.3   \\
+\textbf{Df Model:}              &          11      & \textbf{                     } &             \\
+\textbf{Covariance Type:}       &       HAC        & \textbf{                     } &             \\
+\bottomrule
+\end{tabular}
+\begin{tabular}{lcccccc}
+                                & \textbf{coef} & \textbf{std err} & \textbf{z} & \textbf{P$> |$z$|$} & \textbf{[0.025} & \textbf{0.975]}  \\
+\midrule
+\textbf{const}                  &       0.0172  &        0.013     &     1.330  &         0.183        &       -0.008    &        0.043     \\
+\textbf{taux\_directeur}        &      -0.0018  &        0.002     &    -0.895  &         0.371        &       -0.006    &        0.002     \\
+\textbf{d\_woods}               &       0.0375  &        0.016     &     2.392  &         0.017        &        0.007    &        0.068     \\
+\textbf{d\_floating}            &       0.0020  &        0.011     &     0.186  &         0.852        &       -0.019    &        0.023     \\
+\textbf{woods\_int}             &      -0.0009  &        0.003     &    -0.348  &         0.728        &       -0.006    &        0.004     \\
+\textbf{floating\_int}          &       0.0055  &        0.002     &     2.286  &         0.022        &        0.001    &        0.010     \\
+\textbf{export\_stat}           &      -0.0529  &        0.132     &    -0.402  &         0.688        &       -0.311    &        0.205     \\
+\textbf{import\_stat\_stat}     &       0.0004  &        0.001     &     0.478  &         0.633        &       -0.001    &        0.002     \\
+\textbf{yield\_perpetual\_stat} &       0.0109  &        0.006     &     1.825  &         0.068        &       -0.001    &        0.023     \\
+\textbf{oil\_price\_stat}       &       0.0032  &        0.014     &     0.223  &         0.824        &       -0.025    &        0.031     \\
+\textbf{gdp\_trend\_stat\_stat} &       0.0110  &        0.028     &     0.387  &         0.699        &       -0.045    &        0.067     \\
+\textbf{gdp\_cycle}             &    3.623e-08  &     1.42e-07     &     0.256  &         0.798        &    -2.41e-07    &     3.14e-07     \\
+\bottomrule
+\end{tabular}
+\begin{tabular}{lclc}
+\textbf{Omnibus:}       & 59.525 & \textbf{  Durbin-Watson:     } &    1.495  \\
+\textbf{Prob(Omnibus):} &  0.000 & \textbf{  Jarque-Bera (JB):  } &  234.201  \\
+\textbf{Skew:}          &  1.954 & \textbf{  Prob(JB):          } & 1.39e-51  \\
+\textbf{Kurtosis:}      &  9.186 & \textbf{  Cond. No.          } & 2.90e+05  \\
+\bottomrule
+\end{tabular}
+%\caption{OLS Regression Results}
+\end{center}
+
+Notes: \newline
+ [1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 4 lags and without small sample correction \newline
+ [2] The condition number is large, 2.9e+05. This might indicate that there are \newline
+ strong multicollinearity or other numerical problems.
