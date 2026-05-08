@@ -1,4 +1,4 @@
-                        Markov Switching Model Results                        
+                        Markov Switching Model Results - PIB                         
 ==============================================================================
 Dep. Variable:                      y   No. Observations:                   97
 Model:               MarkovRegression   Log Likelihood                 -95.213
