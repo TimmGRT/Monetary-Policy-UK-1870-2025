@@ -9,9 +9,9 @@
 
 
 
-########### CODE ###########
+## CODE ##
 
-### Scripts telechargement des datas 
+# Scripts telechargement des datas 
 from global_macro_data import gmd
 from IPython.display import display
 import os
@@ -20,7 +20,7 @@ import pandas as pd
 from fredapi import Fred
 
 
-## FONCTIONS POUR TELECHARGEMENT d'un DF avec global macro data
+# FONCTIONS POUR TELECHARGEMENT d'un DF avec global macro data
 def data_download_gmd(country : str):
     try :
         df = gmd(version="2025_01", country=country)
@@ -40,7 +40,7 @@ def data_download_fred(indicator : str, start : str , end : str):
     return(df)
 
 
-## FONCTTION POUR STORER UN DF DANS LE DATALAKE EN PARQUET
+# FONCTTION POUR STORER UN DF DANS LE DATALAKE EN PARQUET
 def data_storing(data, nom_fichier : str):
     # recherche du path du datalake
     CURRENT_FILE_PATH = Path(__file__).resolve()
@@ -69,7 +69,7 @@ def data_storing(data, nom_fichier : str):
         print(f"Warning to the file that you entered... Should be a dataframe : {e}")
     return
 
-## FONCTION POUR DOWNLOAD DES DONNÉES PARQUERT DANS VOTRE ZONE DE CODE 
+# FONCTION POUR DOWNLOAD DES DONNÉES PARQUERT DANS VOTRE ZONE DE CODE 
 
 def import_parquet(file_name : str):
     CURRENT_FILE_PATH = Path(__file__).resolve()
@@ -87,7 +87,7 @@ def import_parquet(file_name : str):
     return df
 
 
-## FONCION POUR SAVOIR QUELS SONT LES PARQUETS DISPO DANS LA BD 
+# FONCION POUR SAVOIR QUELS SONT LES PARQUETS DISPO DANS LA BD 
 
 def which_parquet():
     CURRENT_FILE_PATH = Path(__file__).resolve()
@@ -98,7 +98,7 @@ def which_parquet():
     print(f"les fichiers disponibles dans la BD sont : {list_file}")
 
 
-# ## GUIDE des fonctions du module local datalake
+# # GUIDE des fonctions du module local datalake
 
 # from DATALAKE.data import *
 
