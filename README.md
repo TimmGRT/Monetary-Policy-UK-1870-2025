@@ -13,10 +13,10 @@ Problématique : Dans quelle mesure l’efficacité des chocs de politique moné
 - 🧑‍💻 **Veljko**  
 - 🧑‍💻 **Timéo**
 
-Explication fonctionnement github pour Ryan, Dorian et Veljko
-
 ### Lien vers le journal de bord du projet :
 [https://docs.google.com/document/d/14NkQ9kOfRvtMvt0urUogPzFW_W_OlQbyQNy4H52IoLU/edit?tab=t.0](https://docs.google.com/document/d/1ArN4QLH1IzCfRL3MGWTbQbo_JbPDv8UI/edit)
+
+## Explication fonctionnement github pour Ryan, Dorian et Veljko : 
 
 ### 1. Téléchargement de git en local 
 dans le terminal : **xcode-select --install**
