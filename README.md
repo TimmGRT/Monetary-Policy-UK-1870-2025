@@ -1,4 +1,4 @@
-# 💰📈📊 ==== Name of the repo : Monetary-Policy-UK-1870-2025 ==== 📊📈💰
+# 💰📈📊 ==== Monetary-Policy-UK-1870-2025 ==== 📊📈💰
 
 ### Monetary Theory • Macroeconomics • Economic Analysis
 
